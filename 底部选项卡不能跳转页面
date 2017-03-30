@@ -1,0 +1,7 @@
+MUI的底部选项卡是div模式的，也就是说使用div来模拟每个选项的页面，通过显示隐藏来做到不同的页面切换，典型的SPA模式，
+这种模式适合简单的业务系统，每个选项卡的内容都要写在一个DIV中，如果逻辑复杂，会导致当前页面DOM结构复杂，有可能造成webview
+响应缓慢，甚至崩溃，这种模式不适合我现在的项目，所以我给他改造了一下，解决办法如下
+
+mui('body').on('tap','.mui-bar-tab a',function(){
+   document.location.href=this.href;
+});
